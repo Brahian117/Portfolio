@@ -1,0 +1,33 @@
+export interface Project {
+  id: string
+  title: string
+  stack: string[]
+  demoUrl?: string
+  repoUrl?: string
+  description?: string
+  
+}
+
+export const projects: Project[] = [
+  {
+    id: '1',
+    title: 'URLShortenerApp',
+    stack: ['React', 'TypeScript', 'MUI'],
+    repoUrl: 'https://github.com/brahian117/urlshortenerweb',
+    demoUrl: 'https://url-shortener-three-wheat.vercel.app/',
+    description: 'Web application to shorten URLs efficiently, connected to URLShortenerAPI.'
+  },
+  {
+    id: '2',
+    title: 'URLShortenerAPI',
+    stack: ['C#', 'ASP.NET', 'SQL Server', 'EF','Azure'],
+    repoUrl: 'https://github.com/brahian117/urlshortenerapi',
+    description: 'API used by URL ShortenerAPP to shorten URLs or get redirects.'
+  },
+  {
+    id: '3',
+    title: 'PatronusBazar',
+    stack: ['Angular', 'C#', 'TypeScript','MySQL', 'CSS'],
+    repoUrl: 'https://github.com/Brahian117/PatronusBazar'
+  }
+]
