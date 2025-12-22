@@ -1,48 +1,35 @@
-import { FaSun, FaMoon } from "react-icons/fa";
-import { useScroll } from "../../hooks/useScroll";
+import { FaSun, FaMoon } from "react-icons/fa"
+import { useScroll } from "../../hooks/useScroll"
 
 type Props = {
-  darkMode: boolean;
-  toggleDarkMode: () => void;
-};
+  darkMode: boolean
+  toggleDarkMode: () => void
+}
 
 export const Header = ({ darkMode, toggleDarkMode }: Props) => {
-  const { scrollTo } = useScroll();
+  const { scrollTo } = useScroll()
 
   return (
-    <header className="sticky top-0 z-50 bg-surface-light dark:bg-surface-dark border-b border-border-light dark:border-border-dark transition-colors">
-      <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-3">
-        
-        {/* Logo / Nombre */}
-        <button
-          onClick={() => scrollTo("hero")}
-          className="font-bold text-lg text-hd-light dark:text-hd-dark hover:text-primary transition-colors"
-        >
-          HOME
+    <header className="header-container">
+      <div className="header-content">
+
+        <button onClick={() => scrollTo("hero")} className="header-name">
+          Brahian <span className="text-primary">Cruz</span>
         </button>
 
-        {/* Navegación */}
-        <nav className="flex items-center gap-2">
+        <nav className="flex items-center gap-4">
           {["about", "skills", "projects"].map((section) => (
-            <button
-              key={section}
-              onClick={() => scrollTo(section)}
-              className="px-3 py-2 rounded-md text-sm font-medium text-text-light dark:text-text-dark hover:bg-primary hover:text-white dark:hover:bg-primary-hover transition-colors"
-            >
-              {section.charAt(0).toUpperCase() + section.slice(1)}
+            <button key={section} onClick={() => scrollTo(section)} className="header-nav-btn">
+              {section}
             </button>
           ))}
-
-          {/* Toggle Dark Mode */}
-          <button
-            onClick={toggleDarkMode}
-            aria-label="Toggle dark mode"
-            className="ml-2 p-2 rounded-md border border-border-light dark:border-border-dark text-text-light dark:text-text-dark hover:bg-primary hover:text-white dark:hover:bg-primary-hover transition-colors"
-          >
-            {darkMode ? <FaSun /> : <FaMoon />}
-          </button>
         </nav>
+
+        <button onClick={toggleDarkMode} aria-label="Toggle dark mode" className="header-toggle-btn">
+          {darkMode ? <FaSun /> : <FaMoon />}
+        </button>
+
       </div>
     </header>
-  );
-};
+  )
+}

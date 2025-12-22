@@ -2,34 +2,104 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Variables de tema */
 @theme {
-  --color-bg-light: #f9fafb;
-  --color-bg-dark: #0f172a;
+  --color-bg-light: theme(colors.gray.50);
+  --color-bg-dark: theme(colors.slate.900);
 
-  --color-text-light: #1f2937;
-  --color-text-dark: #e0e0e0;
-  --color-text-muted-light: #6b7280;
-  --color-text-muted-dark: #9ca3af;
+  --color-text-light: theme(colors.gray.800);
+  --color-text-dark: theme(colors.gray.200);
 
-  --color-primary: #3b82f6;
-  --color-primary-hover: #60a5fa;
-  --color-primary-border: #3b82f6;
-  --color-primary-border-hover: #60a5fa;
+  --color-text-muted-light: theme(colors.gray.500);
+  --color-text-muted-dark: theme(colors.gray.400);
 
-  --color-secondary: #10b981;
-  --color-secondary-hover: #34d399;
-  --color-secondary-border: #10b981;
-  --color-secondary-border-hover: #34d399;
+  --color-primary: theme(colors.indigo.500);
+  --color-primary-hover: theme(colors.indigo.400);
+  --color-primary-dark: theme(colors.indigo.400);
+  --color-primary-dark-hover: theme(colors.indigo.300);
 
-  --color-surface-light: #ffffff;
-  --color-surface-dark: #1e293b;
+  --color-surface-light: theme(colors.white);
+  --color-surface-dark: theme(colors.slate.800);
 
-  --color-border-light: #e5e7eb;
-  --color-border-dark: #3f3f55;
+  --color-border-light: theme(colors.gray.200);
+  --color-border-dark: theme(colors.slate.700);
 
-  --color-accent-light: #f97316;
-  --color-accent-dark: #fb923c;
+  --color-accent-light: theme(colors.orange.500);
+  --color-accent-dark: theme(colors.orange.400);
+}
 
-  --color-shadow-light: rgba(0,0,0,0.08);
-  --color-shadow-dark: rgba(0,0,0,0.3);
+@layer components {
+  /* Botón principal */
+  .btn-primary {
+    @apply inline-flex items-center justify-center
+      rounded-lg px-4 py-3
+      text-sm font-semibold
+      transition-all duration-200
+      focus:outline-none focus:ring-2 focus:ring-offset-2
+      bg-primary text-white
+      hover:bg-primary-hover
+      hover:cursor-pointer
+      hover:transform hover:-translate-y-1
+      hover:shadow-[0px_6px_20px_0px_rgba(91,110,225,0.25)];
+  }
+
+  .dark .btn-primary {
+    @apply bg-primary-dark text-slate-900 hover:bg-primary-dark-hover;
+  }
+
+  /* Botón ghost (header / links) */
+  .btn-ghost {
+    @apply inline-flex items-center justify-center
+      rounded-md px-3 py-2
+      text-sm font-medium
+      text-text-light
+      transition
+      hover:bg-primary-hover
+      hover:text-white
+      hover:cursor-pointer;
+  }
+
+  .dark .btn-ghost {
+    @apply text-text-dark hover:bg-primary-hover;
+  }
+
+  /* Header */
+  .header-container {
+    @apply fixed top-0 left-1/2 -translate-x-1/2 z-50
+      bg-surface-light/80 dark:bg-surface-dark/70
+      backdrop-blur
+      border border-border-light border-t-0
+      rounded-b-xl
+      shadow-xl shadow-black/10
+      transition-colors;
+  }
+
+  .header-content {
+    @apply flex items-center justify-center gap-6 px-6 py-3 max-w-3xl mx-auto;
+  }
+
+  .header-name {
+    @apply text-xl md:text-2xl font-semibold tracking-tight text-text-light dark:text-text-dark transition-colors;
+  }
+
+  .header-name:hover {
+    @apply text-primary hover:cursor-pointer;
+  }
+
+  .header-nav-btn {
+    @apply text-sm font-medium capitalize text-text-muted-light dark:text-text-muted-dark transition-colors;
+  }
+
+  .header-nav-btn:hover {
+    @apply text-primary hover:cursor-pointer;
+  }
+
+  .header-toggle-btn {
+    @apply p-2 rounded-lg text-text-muted-light dark:text-text-muted-dark transition-colors;
+  }
+
+  .header-toggle-btn:hover {
+    @apply text-primary bg-surface-light/60 dark:bg-surface-dark/60 hover:cursor-pointer;
+  }
+
 }
