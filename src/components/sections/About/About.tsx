@@ -13,7 +13,7 @@ export const About = () => {
   return (
     <section
       id="about"
-      className="scroll-mt-24 min-h-screen flex flex-col justify-center items-center text-center px-6 sm:px-12 md:px-24 py-12
+      className="scroll-mt-24 min-h-screen flex flex-col justify-center items-center text-center px-6 sm:px-12 md:px-24 py-10
                  bg-surface-light dark:bg-surface-dark
                  text-text-light dark:text-text-dark"
     >
@@ -26,7 +26,7 @@ export const About = () => {
       </h2>
 
       <div className="flex flex-col md:flex-row items-center gap-12 w-full max-w-6xl">
-        {/* LEFT: Texto */}
+
         <div className="flex-1 flex flex-col gap-6 text-center md:text-left">
           {aboutParagraphs.map((para, index) => (
             <motion.p
@@ -41,7 +41,6 @@ export const About = () => {
           ))}
         </div>
 
-        {/* RIGHT: Avatar animado */}
         <div className="flex-1 flex justify-center md:justify-end">
           <motion.div
             className="w-64 h-64 rounded-full overflow-hidden shadow-xl"
@@ -59,7 +58,7 @@ export const About = () => {
           href="https://github.com/brahian117"
           target="_blank"
           rel="github Brahian Cruz"
-          className="hover:text-primary transition-colors"
+          className="card-social"
         >
           <FaGithub />
         </a>
@@ -67,13 +66,13 @@ export const About = () => {
           href="https://www.linkedin.com/in/brahiancruzg/"
           target="_blank"
           rel="Linkedin Brahian Cruz"
-          className="hover:text-primary transition-colors"
+          className="card-social"
         >
           <FaLinkedin />
         </a>
         <a
           href="mailto:brahiancruz@gmail.com"
-          className="hover:text-primary transition-colors"
+          className="card-social"
           rel="Email to Brahian Cruz"
 
         >
@@ -84,7 +83,6 @@ export const About = () => {
   );
 };
 
-// Función para resaltar palabras clave
 const keywords = ['Brahian', 'developer', 'front-end', 'full-stack', 'Australian Shepherd', 'technologies'];
 function highlightKeywords(text: string) {
   const parts = text.split(new RegExp(`(${keywords.join('|')})`, 'gi'));

@@ -2,7 +2,6 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Variables de tema */
 @theme {
   --color-bg-light: theme(colors.gray.50);
   --color-bg-dark: theme(colors.slate.900);
@@ -29,7 +28,6 @@
 }
 
 @layer components {
-  /* Botón principal */
   .btn-primary {
     @apply inline-flex items-center justify-center
       rounded-lg px-4 py-3
@@ -40,30 +38,28 @@
       hover:bg-primary-hover
       hover:cursor-pointer
       hover:transform hover:-translate-y-1
-      hover:shadow-[0px_6px_20px_0px_rgba(91,110,225,0.25)];
+      hover:shadow-[0px_6px_20px_0px_rgba(91,110,225,0.25)]
+      dark:bg-primary-dark 
+    dark:text-slate-900 
+      dark:hover:bg-primary-dark-hover;
   }
 
-  .dark .btn-primary {
-    @apply bg-primary-dark text-slate-900 hover:bg-primary-dark-hover;
-  }
-
-  /* Botón ghost (header / links) */
   .btn-ghost {
     @apply inline-flex items-center justify-center
       rounded-md px-3 py-2
       text-sm font-medium
       text-text-light
       transition
+      border border-primary
       hover:bg-primary-hover
       hover:text-white
-      hover:cursor-pointer;
+      hover:cursor-pointer
+      hover:transform hover:-translate-y-1
+      hover:shadow-[0px_6px_20px_0px_rgba(91,110,225,0.25)]
+      dark:text-text-dark 
+      dark:hover:bg-primary-hover;
   }
 
-  .dark .btn-ghost {
-    @apply text-text-dark hover:bg-primary-hover;
-  }
-
-  /* Header */
   .header-container {
     @apply fixed top-0 left-1/2 -translate-x-1/2 z-50
       bg-surface-light/80 dark:bg-surface-dark/70
@@ -79,27 +75,28 @@
   }
 
   .header-name {
-    @apply text-xl md:text-2xl font-semibold tracking-tight text-text-light dark:text-text-dark transition-colors;
-  }
-
-  .header-name:hover {
-    @apply text-primary hover:cursor-pointer;
+    @apply text-xl md:text-2xl font-semibold tracking-tight text-text-light dark:text-text-dark transition-colors
+    hover:text-primary hover:cursor-pointer;
   }
 
   .header-nav-btn {
-    @apply text-sm font-medium capitalize text-text-muted-light dark:text-text-muted-dark transition-colors;
-  }
-
-  .header-nav-btn:hover {
-    @apply text-primary hover:cursor-pointer;
+    @apply text-sm font-medium capitalize text-text-muted-light dark:text-text-muted-dark transition-colors
+    hover:text-primary hover:cursor-pointer;
   }
 
   .header-toggle-btn {
-    @apply p-2 rounded-lg text-text-muted-light dark:text-text-muted-dark transition-colors;
+    @apply p-2 rounded-lg text-text-muted-light dark:text-text-muted-dark transition-colors
+    hover:bg-surface-light/60 
+    dark:hover:bg-surface-dark/60
+    hover:cursor-pointer;
   }
 
-  .header-toggle-btn:hover {
-    @apply text-primary bg-surface-light/60 dark:bg-surface-dark/60 hover:cursor-pointer;
+  .card-social {
+    @apply transition-colors
+    hover:cursor-pointer
+    hover:transform hover:-translate-y-1
+    hover:shadow-[0px_6px_20px_0px_rgba(91,110,225,0.25)]
+    hover:text-accent-light
+    dark:hover:text-accent-dark;
   }
-
 }

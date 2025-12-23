@@ -33,7 +33,6 @@ const buildInitialPositions = (): SkillPosition[] => {
 };
 
 export const Skills = () => {
-  // ⚠️ useState initializer = se ejecuta UNA sola vez
   const [skills] = useState<SkillPosition[]>(buildInitialPositions);
 
   return (
@@ -50,15 +49,15 @@ export const Skills = () => {
         Technologies and tools I enjoy working with.
       </p>
 
-      {/* Canvas */}
-      <div className="relative w-full max-w-6xl h-[85vh] rounded-xl
+     
+      <div className="relative w-full max-w-6xl h-100 rounded-xl
                       border border-border-light dark:border-border-dark
                       overflow-hidden">
         {skills.map(skill => (
           <motion.div
             key={skill.name}
             className="absolute rounded-full flex items-center justify-center
-                       shadow-lg cursor-pointer select-none"
+                       shadow-lg select-none"
             style={{
               width: 64,
               height: 64,

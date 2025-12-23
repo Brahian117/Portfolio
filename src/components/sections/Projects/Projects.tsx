@@ -5,7 +5,7 @@ export const Projects = () => {
   return (
     <section
       id="projects"
-      className="scroll-mt-24 min-h-screen py-12 px-6
+      className="min-h-screen scroll-mt-24  py-20 px-6
                  bg-surface-light dark:bg-surface-dark
                  text-text-light dark:text-text-dark"
     >
