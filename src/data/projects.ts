@@ -1,5 +1,5 @@
-import  ShortyImage  from '../assets/projects/Shorty.png';
 import  ShortyApiImage  from '../assets/projects/ShortyAPI.png';
+import  ShortyImage  from '../assets/projects/ShortyURL.png';
 import  PatronusImage  from '../assets/projects/Patronus.png';
 
 export interface Project {
