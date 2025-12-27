@@ -1,6 +1,3 @@
-import  ShortyApiImage  from '../assets/projects/ShortyAPI.png';
-import  ShortyImage  from '../assets/projects/ShortyURL.png';
-import  PatronusImage  from '../assets/projects/Patronus.png';
 
 export interface Project {
   id: string
@@ -17,7 +14,7 @@ export const projects: Project[] = [
     id: '1',
     title: 'Shorty',
     stack: ['React', 'TypeScript', 'TailwindCSS','Vite'],
-    image: ShortyImage,
+    image: '/projects/ShortyURL.png',
     repoUrl: 'https://github.com/brahian117/urlshortenerweb',
     demoUrl: 'https://shtu.vercel.app/',
     description: 'Web application to shorten URLs efficiently, connected to URLShortenerAPI.'
@@ -26,7 +23,7 @@ export const projects: Project[] = [
     id: '2',
     title: 'URLShortenerAPI',
     stack: ['C#', 'ASP.NET', 'SQL Server', 'EF','Azure'],
-    image: ShortyApiImage,
+    image: '/projects/ShortyAPI.png',
     repoUrl: 'https://github.com/brahian117/urlshortenerapi',
     demoUrl: 'https://shtu.vercel.app/',
     description: 'API used by Shorty to shorten URLs or get redirects.'
@@ -34,7 +31,7 @@ export const projects: Project[] = [
   {
     id: '3',
     title: 'PatronusBazar',
-    image: PatronusImage,
+    image: '/projects/Patronus.png',
     stack: ['Angular', 'C#', 'TypeScript','MySQL', 'CSS'],
     repoUrl: 'https://github.com/Brahian117/PatronusBazar',
     description: 'Harry Potter e-commerce platform built with Angular and C# backend.'
