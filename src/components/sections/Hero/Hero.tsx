@@ -55,9 +55,9 @@ export const Hero = () => {
               View Projects
             </button>
             <a
-              href="https://github.com/brahian117"
+              href="https://linkedin.com/in/brahiancruzg"
               target="_blank"
-              rel="github Brahian Cruz"
+              rel="LinkedIn Brahian Cruz"
               className="btn-ghost px-6 py-3"
             >Contact</a>
           </div>

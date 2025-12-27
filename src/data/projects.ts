@@ -22,6 +22,7 @@ export const projects: Project[] = [
     title: 'URLShortenerAPI',
     stack: ['C#', 'ASP.NET', 'SQL Server', 'EF','Azure'],
     repoUrl: 'https://github.com/brahian117/urlshortenerapi',
+    demoUrl: 'https://shtu.vercel.app/',
     description: 'API used by Shorty to shorten URLs or get redirects.'
   },
   {

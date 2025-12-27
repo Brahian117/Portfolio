@@ -52,8 +52,7 @@ export const Projects = () => {
                   href={project.repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 text-center px-3 py-2 border border-border-light dark:border-border-dark
-                             rounded hover:bg-primary hover:text-white transition-colors text-sm font-medium"
+                  className="flex-1 px-3 py-2 btn-ghost"
                 >
                   Code
                 </a>
@@ -63,8 +62,7 @@ export const Projects = () => {
                   href={project.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 text-center px-3 py-2 bg-primary text-white rounded
-                             hover:bg-primary-hover transition-colors text-sm font-medium"
+                  className="flex-1 px-3 py-2 btn-primary"
                 >
                   Live Demo
                 </a>
@@ -73,6 +71,10 @@ export const Projects = () => {
           </motion.div>
         ))}
       </div>
+       <h2 className="text-4xl md:text-4xl font-semibold mb-12 text-center">
+        Projects
+      </h2>
+
     </section>
   )
 }
