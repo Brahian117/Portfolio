@@ -1,4 +1,4 @@
-import  ShortyImage  from '../assets/projects/shorty.png';
+import  ShortyImage  from '../assets/projects/Shorty.png';
 import  ShortyApiImage  from '../assets/projects/ShortyAPI.png';
 import  PatronusImage  from '../assets/projects/Patronus.png';
 
