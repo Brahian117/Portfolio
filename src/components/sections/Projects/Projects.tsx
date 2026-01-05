@@ -52,6 +52,14 @@ export const Projects = () => {
                 <p className="text-text-muted-light dark:text-text-muted-dark text-sm">
                   {project.description}
                 </p>
+                
+                <p className="text-text-light dark:text-text-dark text-sm">
+                  {project.stack.map((tech, idx) => (
+                    <span key={idx}>
+                      {tech}{idx < project.stack.length - 1 ? ', ' : ''}
+                    </span>
+                  ))}
+                </p>
               </div>
 
                 <div className="flex gap-3 p-4 pt-0">
@@ -79,7 +87,15 @@ export const Projects = () => {
             </div>
             </motion.div>
           ))}
-        </div>
+        </div> 
+        <div className="mt-12 flex justify-center">     <a
+              href="https://github.com/brahian117"
+              target="_blank"
+              rel="Github Brahian Cruz"
+              className="btn-primary px-6 py-3"
+            >Others projects</a>  </div>
+     
+
       </section>
 
       {/* MODAL */}
